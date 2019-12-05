@@ -1,3 +1,13 @@
+# Added by Trevor Martin
+*.py~
+*.md~
+*.sh~
+*.R~
+*.csv
+*.csv~
+*.txt~
+*.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
