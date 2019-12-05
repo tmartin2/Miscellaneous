@@ -67,13 +67,3 @@ while simulating:
     f"* 40 points:     {top[4]}{' '*((len(str(balls))+3)-len(str(top[4])))}{round((top[4]/balls),2)*100}%\n"
     )
     print(output)
-    
-    
-
-
-
-            
-
-
-
- 
