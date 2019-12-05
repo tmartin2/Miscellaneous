@@ -1,11 +1,10 @@
-"""
+'''
 Game where two players take in and out sticks.
 Specifically,
 1. The game begins with a number of sticks on a table (between 10 and 100)
 2. Each player, in turn, takes between 1-3 sticks off the table.
 3. The player to take the last stick loses.
-"""
-
+'''
 import random
 import sys
 

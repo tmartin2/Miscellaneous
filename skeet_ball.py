@@ -1,3 +1,6 @@
+'''
+Program that simulates skeet ball game
+'''
 import random
 import math 
 import sys
@@ -16,7 +19,9 @@ big = [24,38,18,10,0]
 
 simulating = True  
 while simulating:
+
     getting_input = True
+
     while getting_input:
         print("Remember to press the letter ""\"q""\" if you'd like to exit.\n")
         try:
@@ -31,9 +36,11 @@ while simulating:
         except Exception as error_message:
             print(error_message)
             continue
+
     start_time = time.time()
     thrown_balls = 0
     misses = 0
+
     while thrown_balls < balls:
         x_cord = random.randint(0,48)
         y_cord = random.randint(0,60)
@@ -49,6 +56,7 @@ while simulating:
         if top_dist > top[2] and big_dist > big[2]:
             misses += 1
         thrown_balls += 1
+
     output = (
     f"\nDone!\nExecution time: {round((time.time() - start_time),2)} secs\n\n"
     f"* Total throws:  {balls}{' '*3}{(balls/balls)*100}%\n"
