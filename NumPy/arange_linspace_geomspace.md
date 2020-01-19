@@ -5,8 +5,6 @@
 ```python
 import numpy as np
 ```
-<br/>
-
 ### np.arange
 
 ```python
