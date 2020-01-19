@@ -62,13 +62,25 @@ function1 = lambda w: -np.cos(np.radians(2*np.pi*w.T*w)) + w.T*w
 #plt.show()
 
 # USING NP.ARANGE
-a = np.linspace(start=1, stop=10, num=9)
-b = np.linspace(start=1, stop=10, num=9).reshape((1,9)).T
-c = np.asmatrix(np.linspace(start=1, stop=10, num=9)).T
+a = np.geomspace(start=1, stop=10, num=9)
+b = np.geomspace(start=1, stop=10, num=9).reshape((1,9)).T
+c = np.asmatrix(np.geomspace(start=1, stop=10, num=9)).T
 
 print(f"None: {a}\nShape: {a.shape}\nNdim: {a.ndim}\n")
 print(f"None: {b}\nShape: {b.shape}\nNdim: {b.ndim}\n")
 print(f"None: {c}\nShape: {c.shape}\nNdim: {c.ndim}\n")
+
+arange = np.arange(start=1, stop=10, step= ((10 - 1) / 50))
+linspace =  np.linspace(start=1, stop=10, num=50)
+geomspace = np.geomspace(start=1, stop=10, num=50)
+
+func = lambda x: np.cos(x)
+plt.plot(func(arange), color='red', label='arange')
+plt.plot(func(linspace), color='blue', label='linspace')
+plt.plot(func(geomspace), color='green', label='geomspace')
+plt.legend()
+plt.show()
+
 #plt.plot(function(np.asmatrix(np.arange(-1,1,0.01))))
 #plt.show()
 
