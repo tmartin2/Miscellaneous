@@ -1,10 +1,7 @@
 """Gradient Descent                                                                                                                 
-                                                                                                                                    
-A NumPy implementation of the gradient descent algorithm                                                                            
-                                                                                                                                    
-Author: Trevor Martin                                                                                                               
-Date: 11 January 2020                                                                                                               
-"""
+A NumPy implementation of the gradient descent algorithm                                                                           
+                                                                                                                  
+Author: Trevor Martin                                                                                                              Date: 11 January 2020                                                                                                              """
 import numpy as np
 import sympy as sym
 import matplotlib.pyplot as plt
@@ -13,10 +10,10 @@ from mpl_toolkits.mplot3d import Axes3D
 
 
 def newton(w_0, func, d1, d2):
-"""performs newton's method on a given function"""
+    """performs newton's method on a given function"""
     w_k = w_0
     for step in range(0, 15): # number of descents
-        plt.plot(w_k, func(w_k)), marker='o',color='red')
+        plt.plot(w_k, func(w_k), marker='o',color='red')
         w_k_minus_1 = w_k
         w_k = w_k - (d1(w_k_minus_1) / d2(w_k_minus_1))
         w_K_minus_1 = abs(w_k - w_k_minus_1)

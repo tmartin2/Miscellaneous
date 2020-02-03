@@ -11,10 +11,10 @@ from mpl_toolkits.mplot3d import Axes3D
 
 
 def descend_gradient(w_0, alpha, func, deriv):
-"""performs gradient descent on a given function"""
+    """performs gradient descent on a given function"""
     w_k = w_0
     for step in range(0, 15): # number of descents
-        plt.plot(w_k, func(w_k)), marker='o',color='red')
+        plt.plot(w_k, func(w_k), marker='o',color='red')
         w_k_minus_1 = w_k
         w_k = w_k - (alpha * deriv(w_k_minus_1))
         w_K_minus_1 = abs(w_k - w_k_minus_1)
