@@ -3,7 +3,6 @@ Program that cleans a file or phrase, and in the case of the file, finds word fr
 
 Author: Trevor Martin
 '''
-import sys
 
 
 def remove_punc(file_lines):
@@ -75,7 +74,7 @@ def main():
     while True:
         input_ = str(input("Please enter one of the inputs described in the options.\nHere: "))
         if input_ == 'o': print(message)
-        if input_ == 'q': sys.exit()
+        if input_ == 'q': raise SystemExit # same as sys.exit() 
         if input_ != ('o' or 'q') and len(input_) >= 1:
             
                 try:
