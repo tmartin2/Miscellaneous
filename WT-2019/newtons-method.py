@@ -20,6 +20,7 @@ def newton(w_0, func, d1, d2):
         w_k_minus_1 = w_k
         w_k = w_k - (d1(w_k_minus_1) / d2(w_k_minus_1))
         w_K_minus_1 = abs(w_k - w_k_minus_1)
+    plt.show()
 
         
 def main():
