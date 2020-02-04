@@ -17,6 +17,7 @@ def main():
     sigmoid = lambda vector: [float(1 / (1 + np.exp(-x))) for x in vector]
     apply_sig = np.asarray([sigmoid(vec) for vec in vectors])
 
+    
     figure = plt.figure()
     axes = figure.add_subplot(111, projection='3d')
     axes.plot(vectors[0],
@@ -27,6 +28,11 @@ def main():
               apply_sig[1],
               apply_sig[2],
               'o', color="blue")
+    
+    # array = np.arange(start=-10, stop=11, step=1)
+    # sigmoided_array = sigmoid(array)
+    # plt.plot(sigmoided_array)
+
     plt.show()
     
 if __name__ == '__main__':
