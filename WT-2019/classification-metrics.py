@@ -12,22 +12,35 @@ from mpl_toolkits.mplot3d import Axes3D
 
 def main():
 
-    np.random.seed(3) 
-
     # low[, high, size, dtype]
     rand_size = lambda: np.random.randint(low=25, high=100)
-    rand_dist = lambda: np.random.randint(low=1, high=100, size=rand_size())
+    rand_dist_x = lambda: np.random.randint(low=1, high=100, size=rand_size())
+    rand_dist_y = lambda length: np.random.randint(low=1, high=100, size=length)
     
-    true_positive, true_negative = rand_dist, rand_dist
-    false_positive, false_negative = rand_dist, rand_dist
+    tp, tn, fp, fn = rand_dist_x(), rand_dist_x(), rand_dist_x(), rand_dist_x()
 
-    plt.plot(true_positive, color='red', label='TP')
-    plt.plot(true_negative, color='blue', label='TN')
-    plt.plot(false_positive, color='green', label='FP')
-    plt.plot(false_negative, color='orange', label='FN')
+    plt.scatter(tp, rand_dist_y(tp.size), color='red', label=f'TruePositive = {tp.size}')
+    plt.scatter(tn, rand_dist_y(tn.size), color='blue', label=f'TrueNegative = {tn.size}')
+    plt.scatter(fp, rand_dist_y(fp.size), color='green', label=f'FalsePositive = {fp.size}')
+    plt.scatter(fn, rand_dist_y(fn.size), color='orange', label=f'FalseNegative = {fn.size}')
+
+    plt.xlabel("x")
+    plt.ylabel("y")
 
     plt.legend()
     plt.show()
+    
+    accuracy = (tp.size+tn.size) / (tp.size+fn.size+fp.size+tn.size) 
+    balanced_acc = ((tp.size/(tp.size+fn.size)) + (tn.size/(fp.size+tn.size))) / 2
+    specificity = tn.size / (tn.size+fp.size)
+    precision = tp.size / (tp.size+fp.size)
+    recall = tp.size / (tp.size+fn.size)
+    f1_score = 2 * ((recall*precision)/(recall+precision))
+    mcc = ((tp.size*tn.size) - (fp.size*fn.size)) / np.sqrt((tp.size+fp.size)*(tp.size+fn.size)*(tn.size+fp.size)*(tn.size+fn.size))
+    
+    print(f"ACC: {accuracy}\nBAL: {balanced_acc}\nSPEC: {specificity}\nPREC: {precision}\nREC: {recall}\nF1: {f1_score}\nMCC: {mcc}")
+
+    
 
 if __name__ == '__main__':
     main()
