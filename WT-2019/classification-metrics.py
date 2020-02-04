@@ -14,14 +14,12 @@ def main():
 
     np.random.seed(3) 
 
+    # low[, high, size, dtype]
     rand_size = lambda: np.random.randint(low=25, high=100)
     rand_dist = lambda: np.random.randint(low=1, high=100, size=rand_size())
     
-    # low[, high, size, dtype]
-    true_positive = np.random 
-    true_negative = np.randint(low=1, high=100, size=rand_size())
-    false_positive = np.randint(low=1, high=100, size=rand_size())
-    false_negative = np.randint(low=1, high=100, size=rand_size())
+    true_positive, true_negative = rand_dist, rand_dist
+    false_positive, false_negative = rand_dist, rand_dist
 
     plt.plot(true_positive, color='red', label='TP')
     plt.plot(true_negative, color='blue', label='TN')
