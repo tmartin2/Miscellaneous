@@ -1,8 +1,8 @@
-"""Gradient Descent                                                                                                                 
-A NumPy implementation of the gradient descent algorithm                                                                           
+"""Newton's Method                                                                                                                
+A NumPy implementation of newton's method optimization algorithm                                                                          
                                                                                                                   
 Author: Trevor Martin                                                                                                              
-Date: 11 January 2020                                                                                                              
+Date: 15 January 2020                                                                                                              
 """
 import numpy as np
 import sympy as sym
