@@ -4,9 +4,9 @@ Author: Trevor Martin
 Date: 19 January 2020
 """
 import numpy as np
-import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
-
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 
 def main():
     
@@ -24,19 +24,17 @@ def main():
                            6, 1, 2, 5, 4, 4,
                            4, 4, 1, 1, 2, 1])
 
-    linear_model = LogisticRegression()
-    linear_model.fit(regressors, predictors)
+    logistic_model = LogisticRegression()
+    logistic_model.fit(regressors, predictors)
 
-    coeff_det = linear_model.score(regressors, predictors) # coefficient of determination
-    # linear_model.intercept_ gets model intercept
-    # linear_model.coef_ gets slope
-    
-    predictions = linear_model.predict(regressors)
-    # or linear_model.intercept_ + model.coef_ * regressors
-    
-    plt.scatter(regressors, predictors, color="blue")
-    plt.plot(regressors, predictions, color="red", linewidth=3)
-    plt.show()    
+    coeff_det = logistic_model.score(regressors, predictors) # coefficient of determination
+
+    predictions = logistic_model.predict(regressors)
+
+    confus_matrix = confusion_matrix(predictors, predictions)
+    print(f"{confus_matrix}")
+    report = classification_report(predictors, predictions)
+    print(f"{report}")
 
 if __name__ == '__main__':
     main()
