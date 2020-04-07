@@ -8,6 +8,7 @@ Specifically,
 import random
 import sys
 
+__author__ = 'Trevor Martin'
 
 player_01 = str(input("Enter your name, player 01: "))
 player_02 = str(input("Enter your name, player 02: "))

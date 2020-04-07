@@ -3,6 +3,7 @@ My implementation of the fibonacci algorithm
 using recursion
 '''
 
+__author__ = "Trevor Martin"
 
 def fibonacci(number):
     if number == 0:
