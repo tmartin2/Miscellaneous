@@ -1,6 +1,7 @@
 import pandas as pd
 import tensorflow as tf
 import numpy as np
+import itertools as it
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import ElasticNet
@@ -12,23 +13,153 @@ from sklearn.metrics import mean_squared_error
 from tensorflow import keras
 from tensorflow.keras import layers
 
+# concatenate the separate files
+dir = './data2/'
+df1 = pd.read_csv(dir+'DNNRNN_testing_medusa_Media.csv')
+df2 = pd.read_csv(dir+'DNNRNN_testing_medusa_webSearch.csv')
+df3 = pd.read_csv(dir+'DNNRNN_testing_medusa.csv')
 
-filepath = './dirty/DNNRNN_testing_medusa.csv'
+df = pd.concat([df1, df2, df3], axis=0, ignore_index=True)
+df = df.dropna()
 
-df = pd.read_csv(filepath_or_buffer=filepath)
+# these are relatively uninformative, as seen in linear regression
+labels_to_drop = [
+    'timeStamp',
+    'systemTime1Sec',
+    'ioWaitTime1Sec',
+    'percentVirtualMemory',
+    'networkBytesSent',
+    'networkBytesReceived',
+    'networkConnections',
+    'systemCalls',
+    'cacheMemoryUsedBytes',
+    'swapMemoryUsedBytes',
+    'swapMemoryOutBytes',
+    'swapMemoryInBytes',
+    'ioReadBytes',
+    'ioWriteBytes',
+    'predictedPower'
+]
+df = df.drop(columns=labels_to_drop, axis=1)
 
-print(df)
-training_data = df.iloc[:, int(0.85*len(df)):]
-testing_data = df.iloc[:, :int(0.85*len(df))]
+# shuffle dataframe
+df = df.sample(frac = 1)
 
-target = df.pop('predictedPower')
-features = df.values
+# split into training and testing data
+training_data = df.iloc[:int(0.85*len(df)), :]
+testing_data = df.iloc[int(0.85*len(df)):, :]
 
-ds = tf.data.Dataset.from_tensor_slices((data[:,:4], data[:,-1].reshape(-1,1)))
+# training target and features
+trn_target = training_data.pop('whatsupPower')
+trn_features = training_data.values
 
-ds =
+# normalized training features
+trn_norm_features = MinMaxScaler().fit_transform(trn_features)
 
+# ? is just using trn_target the same as trn_target.values in this case
 
+# training dataset
+trn = tf.data.Dataset.from_tensor_slices((trn_norm_features, trn_target))
+
+# create validation dataset and edit size of training dataset
+trn_ds_size = int(len(training_data)*0.7)
+sample_tst_ds_size = int(len(training_data)*0.15)
+
+trn_ds = trn.take(trn_ds_size)
+sample_tst_ds = trn.skip(trn_ds_size)
+val_ds = sample_tst_ds.skip(sample_tst_ds_size)
+sample_tst_ds = sample_tst_ds.take(sample_tst_ds_size)
+
+# build the model
+# model = keras.Sequential(
+#     [
+#         # layers.Dense(units=64, input_dim=9, activation='relu', name='layer1'),
+#         # layers.Dense(units=64, activation='relu', name='layer2'),
+#         # layers.Dense(units=1, name='end'),
+#
+#         layers.Dense(units=32, activation='relu'),
+#         layers.Dense(units=16, activation='relu'),
+#         layers.Dense(units=32, activation='relu'),
+#         layers.Dense(units=8,activation='relu'),
+#         layers.Dense(1)
+#     ]
+# )
+
+# model.compile(
+#     optimizer=tf.keras.optimizers.Adam(learning_rate=0.00001),
+#     loss='mean_absolute_error',
+#     metrics=['mean_absolute_error'],
+# )
+
+# ALTERNATE METHOD
+# model.compile(
+#     optimizer='adam',
+#     loss=tf.keras.losses.MeanSquaredError(reduction="auto", name="mean_squared_error"),
+#     metrics=['mse']
+# )
+
+# model.fit(
+#     x=trn_ds,
+#     epochs=200,
+#     validation_data=val_ds,
+#     verbose=1,
+#     callbacks=[tf.keras.callbacks.EarlyStopping(patience=10)],
+#     shuffle=False,
+# )
+
+# evaluate the model
+# model.evaluate(
+#     x=sample_tst_ds,
+#     verbose=1,
+#     callbacks=[tf.keras.callbacks.EarlyStopping(patience=10)],
+# )
+
+# testing target and features
+tst_target = testing_data.pop('whatsupPower')
+tst_features = testing_data.values
+
+# testing normalized features
+tst_norm_features = MinMaxScaler().fit_transform(tst_features)
+
+# testing dataset
+tst_ds = tf.data.Dataset.from_tensor_slices((tst_norm_features, tst_target))
+
+# save the current model and delete it, reinstantiating later with the saved weights
+# model.save(
+#     filepath='/tmp/DNNRNN_testing_medusa01',
+# )
+# del model
+
+# reinstantiate saved weights
+model = keras.models.load_model('/tmp/DNNRNN_testing_medusa01')
+
+# make predictions on test values
+predictions = model.predict(
+    x=tst_ds,
+    verbose=1,
+)
+
+actual_values = tst_target.values.tolist()
+predicted_values = list(it.chain.from_iterable(predictions.tolist()))
+
+total = []
+total.extend(actual_values)
+total.extend(predicted_values)
+max_val = max(total)
+
+ax = plt.axes()
+ax.set_xlim([0, max_val+10])
+ax.set_ylim([0, max_val+10])
+
+for index, a in enumerate(actual_values):
+    offset = abs(a - predicted_values[index])
+    plt.scatter(a, predicted_values[index], c='red')
+
+plt.title('Predicted and Actual Energy Consumption in Watts')
+plt.xlabel('ACTUAL VALUE')
+plt.ylabel('PREDICTED VALUE')
+plt.legend()
+plt.show()
 
 
 # # REGRESSION TESTING
