@@ -78,6 +78,7 @@ stuttery + uncoordinated, stressed + in a state of flow, manic + exceptional lin
 - What if people could simply undergo some biological operation (maybe via nanorobotics or stem cells) that commanded the body's hormones to change
 the proportionality of any appendage, organ, or body part?
 - What if something could be downloaded to the brain, like a DMT experience of something learning program from the movie _The Matrix_?
+- What if I just took a full year to study something? Like, no Internet except to aid in studying. No other books besides those related? No other serious pursuit? No other worries?
 
 #### Unfiltered Insights
 - Will you care about this in the long run?
@@ -188,6 +189,7 @@ approaches what they need to get done?
 - What are the effects of the gut microbiome on intelligence?
 - Is there a way to produce and sustain in a human the gut microbiome that provides them with their optimal choice of thoughts, urges, effects of
 the microbiome, etc..?
+- 
 
 #### Things to Explain in Detail
 - MLPs
