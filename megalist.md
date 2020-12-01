@@ -1,4 +1,5 @@
 ### Trevor's Mind Matter
+
 ---
 
 #### Oberlin College Graduation
@@ -21,6 +22,7 @@ ___Summer Semester 2021___
 
 #### PhD Considerations
 > These will apply regardless of the time in which you actually decide to apply
+
 - Perform decent work to in order to obtain three _strong_ letters of recommendation.
 - Consider taking the Math GRE Subject Test in April
 - Consider email PhD labs and students to get a sense of the culture at the place 
@@ -51,6 +53,7 @@ ___Summer Semester 2021___
 
 #### Desires
 > I need to still adequately differentiate the purpose of Desires, ImagineX, What if?, and Questions.
+
 - Look for a way to track your changing states of mind: calmness + improved ability to speak,
 stuttery + uncoordinated, stressed + in a state of flow, manic + exceptional linguistic ability.
 - Look for a way to track and improve the quality and duration of your sleep
@@ -60,6 +63,7 @@ stuttery + uncoordinated, stressed + in a state of flow, manic + exceptional lin
 
 #### ImagineX
 > I need to still adequately differentiate the purpose of Desires, ImagineX, What if?, and Questions.
+
 - Imagine reciting poems you've memorized during intercourse; I think this would be awesome.
 - Imagine explaining a phone to a 17th century intellectual.
 - Imagine (visualize) a lamp post wrapping around itself.
@@ -67,6 +71,7 @@ stuttery + uncoordinated, stressed + in a state of flow, manic + exceptional lin
 
 #### What if?
 > I need to still adequately differentiate the purpose of Desires, ImagineX, What if?, and Questions.
+
 - What if people's abilities to speak or form sentences mentally were limited, to where they could only speak 1,000 words each day before having to regain the capacity to form new words.
 - What if societies of Neaderthals and Sapiens existed concurrently?
 - What if people could scroll through their memories like scrolling through an album of photos on their phone?
@@ -193,6 +198,7 @@ the microbiome, etc..?
 
 #### Essay Topics
 > This includes creative writing topics
+
 - [x] Write about two people seeing each other for the first time.
 - [x] How do you feel when you love someone who does not love you back?
 - [] How much should people care about the prosperity of the entire human race?
@@ -206,6 +212,7 @@ can make. <br> This is biology
 
 #### Project Ideas
 > Make things that people will love using and that look beautiful
+
 - GANs for optical illusions
 - Raspberry Pi alarm and reminder controlled by Automator
 - Using RL to understand evolutionary behaviour and complexity in living systems
@@ -223,6 +230,7 @@ can make. <br> This is biology
 
 #### Reading List
 > There are books that could be here but are in todo, as they involve exercises.
+
 - X-Risk
 - The Satanic Verses
 - Against the Grain
