@@ -2,7 +2,7 @@
 ---
 
 #### Oberlin College Graduation
-> To graduate you need to also pass Vector Calculus at UCSD
+> To graduate you need to also complete Vector Calculus at UCSD to satisfy the Multivariable Calculus requirement at Oberlin.
 
 ___Spring Semester 2021___
 - NSCI400: Neuroscience Seminar
