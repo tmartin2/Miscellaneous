@@ -163,17 +163,17 @@ plt.show()
 
 
 # # REGRESSION TESTING
-# target = data.pop('Wattage') #y
-# features =data.values #X
+target = data.pop('Wattage') #y
+features =data.values #X
 #
 #
 # #features = data[['CPU_Freq']]
 #
 # # alt
-# #target = data['Wattage']
-# #features = data[['CPU_Freq','CPU_Util','Num_Proc','Num_Apps']]
+#target = data['Wattage']
+# features = data[['CPU_Freq','CPU_Util','Num_Proc','Num_Apps']]
 #
-# linear_regression = LinearRegression()
+#linear_regression = LinearRegression()
 # linear_regression.fit(features, target)
 # y_pred = linear_regression.predict(features)
 # LR_ERROR = mean_squared_error(target, y_pred)
