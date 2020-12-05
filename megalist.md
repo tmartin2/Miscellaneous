@@ -67,7 +67,8 @@ stuttery + uncoordinated, stressed + in a state of flow, manic + exceptional lin
 - Imagine reciting poems you've memorized during intercourse; I think this would be awesome.
 - Imagine explaining a phone to a 17th century intellectual.
 - Imagine (visualize) a lamp post wrapping around itself.
-- Imagine a life without having to deficate or urinate (maybe through bacteria that reabsorb waste into your body). 
+- Imagine a life without having to deficate or urinate (maybe through bacteria that reabsorb waste into your body).
+- Imagine if human genitals were where the bellybutton is.
 
 #### What if?
 > I need to still adequately differentiate the purpose of Desires, ImagineX, What if?, and Questions.
@@ -114,6 +115,7 @@ domain knowledge in more than a single discipline.
 
 - How does temperature affect human behaviour and cognition?
 - How does aging work?
+- What does perception look like when examined under the lens of resource acquisition?
 - How should human society handle drugs?
 - What are the differences between spoken language / written language?
 - What would a society without privacy look like?
@@ -189,12 +191,12 @@ approaches what they need to get done?
 - What are the effects of the gut microbiome on intelligence?
 - Is there a way to produce and sustain in a human the gut microbiome that provides them with their optimal choice of thoughts, urges, effects of
 the microbiome, etc..?
-- 
 
 #### Things to Explain in Detail
 - MLPs
 - CNNs
 - VAEs
+- SVMs
 - NAS
 - Yolov3 with custom images
 
@@ -219,6 +221,16 @@ can make. <br> This is biology
 - Raspberry Pi alarm and reminder controlled by Automator
 - Using RL to understand evolutionary behaviour and complexity in living systems
 - Some sort of randomly generated and diverse JavaScript puzzles
+
+### Reflections
+> Personal 
+
+- Why do things begin to go awry? (sleep schedule gets fucked, no motivation to work, a task becomes unapproachable, you are extremely fatigued)
+- Can you actually adhere to the schedules you desire to adhere to? (Are they unattainable and you feel bad for no reason?)
+- Why can't you effectively work on something for a long period of time (Your interests evaporate somewhat quickly and your coursework usually begins to bore you, even though you usually lose understanding of what is going on before this occurs).
+- How can you fix your brain constantly seeming to lag behind in things?
+- Do you think it'd benefit you to be silent more often and to hang out with people less often?
+- Why can't you ask people out?
 
 #### Potential Skills to Learn
 - AWS
