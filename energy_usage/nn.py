@@ -210,16 +210,16 @@ features =data.values #X
 # #ERROR = mean_squared_error(targets, y_pred)
 
 
-# # NN TESTING
-# #file_path = 'data/cleaned_1+2.npy'
-# file_path = 'data/cleaned_02.npy'
-# arr = np.load(file=file_path)
-#
-# data = pd.DataFrame(data=arr, columns=['CPU_Freq','CPU_Util','Num_Proc','Num_Apps','Wattage'])
-#
-#
-#
-#
+# NN TESTING
+#file_path = 'data/cleaned_1+2.npy'
+file_path = 'data/cleaned_02.npy'
+arr = np.load(file=file_path)
+
+data = pd.DataFrame(data=arr, columns=['CPU_Freq','CPU_Util','Num_Proc','Num_Apps','Wattage'])
+
+
+
+
 # #target = data.pop('Wattage')
 # #normed_data = pd.DataFrame(MinMaxScaler().fit_transform(data), columns=['CPU_Freq','CPU_Util','Num_Proc','Num_Apps','Wattage'])
 # #print(normed_data.shape)
